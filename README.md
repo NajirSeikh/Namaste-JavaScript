@@ -12,13 +12,15 @@ Here is the course link ---> <a href='https://www.youtube.com/playlist?list=PLla
 
 Ans-Everything in JavaScript happens inside an "execution context".
 
-Execution context has two component
+Execution context has two components -
 
-1. Memory component[variable environment]
-   -This is the place where all variables and functions are stored as key value pairs. eg-{key: value || n:2;}
+#### 1. Memory component[variable environment]
 
-2. Code component[Thread of execution]
-   -This is the place where code is executed one line at a time
+-This is the place where all variables and functions are stored as key value pairs. eg-{key: value || n:2;}
+
+#### 2. Code component[Thread of execution]
+
+-This is the place where code is executed one line at a time.
 
 ### \*JavaScript is a synchronous single-threaded language
 
