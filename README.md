@@ -1,3 +1,5 @@
+<!-- /* **************Code by Najir Seikh - 22/05/2023************** */ -->
+
 # <a href='https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP'><strong>Namaste 🙏 JavaScript<strong></a>
 
 <a href='https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP'>Namaste JavaScript</a> is a pure in-depth JavaScript Course released for Free on Youtube. It will cover the core concepts of JavaScript in detail and everything about how JS works behind the scenes inside the JavaScript engine.
@@ -30,14 +32,18 @@ Execution context has two component
 
 When JavaScript code is run, an Execution Context is created. This execution context is formed in 2 phases:-
 
-#### 1. Memory Creation Phase: This is where all the variables and functions are stored in the memory and all the variables are assigned an undefined placeholder. All the functions keep the entire function code.
+#### 1. Memory Creation Phase:
+
+This is where all the variables and functions are stored in the memory and all the variables are assigned an undefined placeholder. All the functions keep the entire function code.
 
 ```
 variable: undefined,
 function: function code block
 ```
 
-#### 2. Code Execution Block: This is where all the code is run one line at a time in a synchronous manner. All the assignments, calculations and logical parts are executed here.
+#### 2. Code Execution Block:
+
+This is where all the code is run one line at a time in a synchronous manner. All the assignments, calculations and logical parts are executed here.
 
 Another thing about functions is that JavaScript ignores the function until it is invoked and when a function is invoked, a new temporary Execution Context is created specially for this function. It remains active until the function executes and is deleted after its work is done.
 
