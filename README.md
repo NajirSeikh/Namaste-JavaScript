@@ -6,7 +6,7 @@
 <br>
 Here is the course link ---> <a href='https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP'><strong>Namaste 🙏 JavaScript<strong></a>
 
-## Ep.1: How JavaScript Works 🔥& Execution Context
+## <a href='https://www.youtube.com/watch?v=ZvbzSrg0afE&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=2'>Ep.1: How JavaScript Works 🔥& Execution Context</a>
 
 ### \*How JavaScript works?
 
@@ -28,7 +28,7 @@ Execution context has two components -
 
 -Synchronous single-threaded means JavaScript can execute one command at a time in a specific order.
 
-## Ep. 2: How JavaScript Code is executed? ❤️& Call Stack
+## <a href='https://www.youtube.com/watch?v=iLWTnMzWtj4&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=3'>Ep. 2: How JavaScript Code is executed? ❤️& Call Stack</a>
 
 ### Summary:
 
