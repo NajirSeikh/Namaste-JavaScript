@@ -1,6 +1,7 @@
 /* **************Code by Najir Seikh - 07/06/2023************** */
 
 /* **************Episode 004: How functions work in JS ❤️ & Variable Environment - 07/06/2023************** */
+/*
 // Code-
 var x = 1;
 a();
@@ -21,7 +22,7 @@ function b() {
 // 10
 // 100
 // 1
-
+*/
 /*
 Summary 1:
 1. We learnt how functions work in JS. 
@@ -35,4 +36,37 @@ Summary 1:
 1) The higher level of the GEC on the stack, higher its preference 
 2) GEC is created as the function is invoked and destroyed as its execution is completed 
 3) same variable names but different scope of execution separates the variable values
+*/
+
+/* **************Episode 005: SHORTEST JS Program 🔥window & this keyword - 08/06/2023************** */
+var a = 10;
+console.log(window.a);
+console.log(a);
+console.log(this.a);
+
+// Output-
+// 10
+// 10
+// 10
+
+/*
+Summary:
+1. Shortest Program in JS: Empty file. Still, browsers make global EC and global space along with Window object.
+2. Global Space: Anything that is not in a function, is in the global space.
+3. Variables present in a global space can be accessed by a "window" object. (like window.a)
+4. In global space, (this === window) object.
+
+Notes:
+• window object is created by the JS engines of the respective browsers when global execution context is created.
+• whenever an execution context is created a "this" variable is also created.
+• at the global level "this" points to the global object( window object in case of browsers).
+• anything that is not inside a function is the "global space".
+• whenever we create any variables or functions in the "global space", they get attached to the global object( window object in case of browsers).
+
+so to access the variables/function defined in the global space , 
+we can use any of the below:
+  var a = 10;
+  console.log(window.a);
+  console.log(a);
+  console.log(this.a)             //at the global space level, where this points to the window object
 */
