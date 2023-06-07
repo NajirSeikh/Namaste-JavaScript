@@ -101,3 +101,51 @@ Thereafter, in the turn for line number associated with variable square2 comes a
 Following this, in the turn for line number associated with variable square4 comes and a local execution context is created AGAIN AND PUT INSIDE THE CALL STACK OVER THE Global Execution Context. Now, with the local execution context, memory creation phase happens and two memories named num and ans are created and just the value of ans is set to undefined. Here, the memory location named num is pointed towards the argument which probably has no name but got a value of 4 and thus this variable named num is assigned 4.Thereafter, code execution phase is initialised and the value of ans is set to 16. Following this, the return statement is hit and the control is handed over to the global execution phase AND LOCAL EXECUTION CONTEXT DISAPPEARS FROM THE CALL STACK.
 
 Call stack maintains the order of execution in the execution context. It has many names such as Execution Context Stack, Program Stack, Control Stack, Runtime Stack, Machine Stack.
+
+## <a href='https://www.youtube.com/watch?v=Fnlnw8uY6jo&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=4'>Ep. 3: Hoisting in JavaScript 🔥(variables & functions)</a>
+
+### Description:
+
+“Hoisting as a core concept relies on the way how the Execution Context is created. In the first phase i.e. the Memory Allocation Phase all the variables and functions are allocated memory, even before any code is executed. All the variables are assigned undefined at this point in time in the local memory. “
+
+### Summary 1:
+
+Hoisting in javascript?
+-Hoisting is a fenomena in javascript by which you can access functions and variables even before you have initialised it.
+
+Code-
+
+```
+getName();
+console.log(x);
+function getName(){
+console.log("namaste javascript");
+}
+```
+
+Output-
+
+```
+namaste javascript
+undefined
+```
+
+Note- This is happening just because of that execution context.
+Note- In case of Hoisting the arrow function is considered as variable not as a function.
+Only proper function declaration will be considered as function
+
+### Summary 2:
+
+1. In JS, before the code is executed, the variables get initialized to undefined.
+2. Arrow functions enact as variables and get "undefined" during the memory creation phase while functions actually get run.
+3. Hoisting: Mechanism in JS where the variable declarations are moved to the top of the scope before execution. Therefore it is possible to call a function before initializing it.
+4. Whenever a JS program is run, a global execution block is created, which comprises of 2: Memory creation and Code execution.
+5. Variable declarations are scanned and are made undefined 6. Function declarations are scanned and are made available
+
+### Summary 3:
+
+1. Hoisting in JavaScript is a process in which all the Variables,
+2. Functions and Class defination are declared BEFORE execution of the code
+3. Variables are initialised to UNDEFINED when they are declared and Function defination is stored AS IT IS.
+4. They are declared in Memory Allocation Phase in the Memory Component of Execution Context, so we can use them even BEFORE they are declared.
+5. UNDEFINED means Variable has been declared but value is not ASSIGNED but NOT DEFINED means Variables is NOT DECLARED. 6. When we assign Variable to a Function defination, we CAN NOT call this Variable as Function BEFORE declaration as it will behave as Variable with UNDEFINED value.
