@@ -81,6 +81,7 @@ Summary-
 6. undefined is a value in JavaScript and in fact, it also takes up memory space.  
 ***undefined is not a keyword. It is a global read-only variable which represents the value undefined.
 */
+/*
 var a;
 console.log(a);
 a = 10;
@@ -92,3 +93,61 @@ console.log(a);
 // undefined
 // 10
 // Hello World!
+
+*/
+/* **************Episode 007: The Scope Chain, 🔥Scope & Lexical Environment - 08/06/2023************** */
+/*
+Summary-
+0) Lexical environment = EC's Local Memory + Reference to Lexical Environment of its parent.
+
+1) Lexical Environment of its parent is the scope where a function is physically present or defined. So, suppose a function x(), is defined and invoked in the GEC, when function x()'s EC is pushed in the call stack, it stores a reference to its parent's lexical environment i.e. the GEC's memory.
+
+2) Whenever a new Execution Context is pushed in the Call Stack it holds a reference to the Lexical Environment of its parent, i.e. the EC's memory from where it was invoked.
+
+3) Global execution context holds reference to null.
+
+4)  Javascript engine first looks for the variable/function being accessed in the local scope of the function, and if not found, it keeps on searching the lexical environment of its parent until it finds the variable/function being accessed.
+
+5) The mechanism mentioned in point 4 above is called SCOPE CHAIN.
+
+6) If the variable accessed is not found in the Scope Chain, then you will get the variable is not defined error in the  browser's console.
+*-------------*
+
+Js engine creates Global Execution Context comprising of 2phases 
+1.Memory creation phase 
+2.code component phase 
+
+Every execution context has its own lexicon environment that holds reference to its parent's lexicon environ 
+Hence 
+lexicon environ of an execution context= local memory space +lexicon environ of its parent
+
+Scope is where js can find required variable /function 
+
+Scope chain is the process of find that req var/fn in the lexicon environs of all execution contexts 
+
+Lexicon environ of global execution context is Global memory space +outer environ ie null 
+Global memory space comprises of all variables and functions skimmed by js engine at top level even before the very first line code execution began
+*-------------*
+
+Scope: where you can access the value of our function in our code
+
+Lexical environment : the Local memory(Created and goes hand-in-hand with 1st phase of corresponding execution context ) along with Lexical environment with the parent! and every time the lexical environment of the corresponding context is used, it references to its parent Lexical environment
+
+for simply understanding, I will try it as 'an onion example'
+see when one layer of onion(a variable) covers the layer inside it, it also covers the inner layers inside that layer and a point on our first layer of onion encloses inner layers our inner layer(variable and function inside the layer) gets covered by our first layer(can access the variable on the context) and the second layer(under first layer) encloses the third layer(innermost layer)still covered by 1st layer(can access the variable on layer)
+
+the Clojure concept starts here
+*/
+
+function a() {
+  var b = 10;
+  c();
+  function c() {
+    console.log(b);
+  }
+}
+
+a();
+
+// Output-
+// 10
