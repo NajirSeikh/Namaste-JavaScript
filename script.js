@@ -39,6 +39,7 @@ Summary 1:
 */
 
 /* **************Episode 005: SHORTEST JS Program 🔥window & this keyword - 08/06/2023************** */
+/*
 var a = 10;
 console.log(window.a);
 console.log(a);
@@ -48,7 +49,7 @@ console.log(this.a);
 // 10
 // 10
 // 10
-
+*/
 /*
 Summary:
 1. Shortest Program in JS: Empty file. Still, browsers make global EC and global space along with Window object.
@@ -70,3 +71,24 @@ we can use any of the below:
   console.log(a);
   console.log(this.a)             //at the global space level, where this points to the window object
 */
+/* **************Episode 006: undefined vs not defined in JS 🤔 - 08/06/2023************** */
+/*
+Summary-
+1. Undefined is like a placeholder till a variable is not assigned a value.
+2. undefined !== not defined
+3. JS- weakly typed language since it doesn't depend on data type declarations.
+4. Understand the difference between undefined and not defined in JS. 5. 5. Many developers assume that undefined is exactly the same as not defined, but that's not true. 
+6. undefined is a value in JavaScript and in fact, it also takes up memory space.  
+***undefined is not a keyword. It is a global read-only variable which represents the value undefined.
+*/
+var a;
+console.log(a);
+a = 10;
+console.log(a);
+a = 'Hello World!';
+console.log(a);
+
+// Output-
+// undefined
+// 10
+// Hello World!
