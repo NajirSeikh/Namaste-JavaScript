@@ -247,3 +247,40 @@ Block scope :- The variables and functions present within the scope of a block s
 Shadowing :- Providing the same name to the variable as of those variables which are present in outer scope.
 
 */
+/* **************Episode 010: Closures in JS 🔥 - 10/06/2023************** */
+/*
+Summary 1:
+Q)What is closure? 
+A)The function bundled with its lexical environment closed to that function 
+simply function + Lexical environment 
+and closures have very special place in runtime environment 
+The fun in JavaScript is you can assign a variable for a function and also you can pass function as a parameter even you can return the function in JavaScript!!  
+
+Q)What does the closure do in my JavaScript programs? 
+A) Whenever I call a function in JavaScript the closure maintains its values(lexical env.) and function in its own runtime and when that specific function executed, it returns with own environment even the variable vanished after its execution
+13:54 : as variable value is changed before executing the return (the function) Value will be 100 
+In closures, values in variable are 'pass by reference' hence there values can be changed, and whenever comes the closure inside closure(multilevel one) we can see the function refers the 'parent' variable 
+
+***
+Uses of Closures-
+- Module Design Pattern
+- Currying 
+- Functions like once
+- Memoize
+- Maintaining state in async world
+- setTimeouts
+- Iterators
+- and many more
+
+*/
+function x() {
+  var a = 7;
+  function y() {
+    console.log(a);
+  }
+  y();
+}
+x();
+
+// Output
+// 7
