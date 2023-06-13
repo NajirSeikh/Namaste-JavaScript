@@ -272,7 +272,7 @@ Uses of Closures-
 - Iterators
 - and many more
 
-*/
+
 function x() {
   var a = 7;
   function y() {
@@ -281,6 +281,57 @@ function x() {
   y();
 }
 x();
-
 // Output
 // 7
+*/
+/* **************Episode 011: setTimeout + Closures Interview Question 🔥 - 10/06/2023************** */
+
+// function x() {
+//   var i = 1;
+//   setTimeout(function () {
+//     console.log(i);
+//   }, 3000);
+// console.log('Namaste JavaScript');
+// }
+// x();
+
+// function x() {
+//   for (var i = 1; i <= 5; i++) {
+//     setTimeout(function () {
+//       console.log(i);
+//     }, i * 1000);
+//   }
+//   console.log('Namaste JavaScript');
+// }
+// x();
+
+// function x() {
+//   for (let i = 1; i <= 5; i++) {
+//     setTimeout(function () {
+//       console.log(i);
+//     }, i * 1000);
+//   }
+//   console.log('Namaste JavaScript');
+// }
+// x();
+
+function x() {
+  for (var i = 1; i <= 5; i++) {
+    function close(x) {
+      setTimeout(function () {
+        console.log(x);
+      }, x * 1000);
+    }
+    close(i);
+  }
+  console.log('Namaste JavaScript');
+}
+x();
+
+/*
+Summary 1:
+1. setTimeout stores the function in a different place and attached a timer to it, when the timer is finished it rejoins the call stack and executes. 
+2. Without closure the var reference gives the latest value as it does not retain the original value but rather has the reference so any update in value after timeout will be shown. 
+3. If we use let/const because they have block scope, every time a new copy of variable is attached, thus this can be done without closure.
+
+*/
