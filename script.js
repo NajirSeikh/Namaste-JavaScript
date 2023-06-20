@@ -315,23 +315,180 @@ x();
 // }
 // x();
 
-function x() {
-  for (var i = 1; i <= 5; i++) {
-    function close(x) {
-      setTimeout(function () {
-        console.log(x);
-      }, x * 1000);
-    }
-    close(i);
-  }
-  console.log('Namaste JavaScript');
-}
-x();
+// function x() {
+//   for (var i = 1; i <= 5; i++) {
+//     function close(x) {
+//       setTimeout(function () {
+//         console.log(x);
+//       }, x * 1000);
+//     }
+//     close(i);
+//   }
+//   console.log('Namaste JavaScript');
+// }
+// x();
 
 /*
 Summary 1:
 1. setTimeout stores the function in a different place and attached a timer to it, when the timer is finished it rejoins the call stack and executes. 
 2. Without closure the var reference gives the latest value as it does not retain the original value but rather has the reference so any update in value after timeout will be shown. 
 3. If we use let/const because they have block scope, every time a new copy of variable is attached, thus this can be done without closure.
+
+*/
+
+/* **************Episode 012: CRAZY JS INTERVIEW 🤯ft. Closures - 20/06/2023************** */
+// 1.
+// function outer() {
+//   var a = 10;
+//   function inner() {
+//     console.log(a);
+//   }
+//   return inner;
+// }
+
+// // outer()();
+// var close = outer();
+// close();
+
+// 2.
+// function outer() {
+//   function inner() {
+//     console.log(a);
+//   }
+//   let a = 10;
+//   return inner;
+// }
+
+// var close = outer();
+// close();
+
+// 3.
+// function outer(b) {
+//   function inner() {
+//     console.log(a, b);
+//   }
+//   let a = 10;
+//   return inner;
+// }
+
+// var close = outer('Hello World!');
+// close();
+
+// 4.
+// function outest() {
+//   var c = 20;
+//   function outer(b) {
+//     function inner() {
+//       console.log(a, b, c);
+//     }
+//     let a = 10;
+//     return inner;
+//   }
+//   return outer;
+// }
+
+// var close = outest()('Hello World!');
+// // var close = (outest())('Hello World!');
+// close();
+
+// 5.
+// function outest() {
+//   var c = 20;
+//   function outer(b) {
+//     function inner() {
+//       console.log(a, b, c);
+//     }
+//     let a = 10; //10
+//     return inner;
+//   }
+//   return outer;
+// }
+// let a = 100;
+// var close = outest()('Hello World!');
+// close();
+
+// 6.
+// function counter() {
+//   var count = 0;
+//   return function incrementCounter() {
+//     count++;
+//     console.log(count);
+//   };
+// }
+
+// var counter1 = counter();
+// counter1();
+// counter1();
+
+// var counter2 = counter();
+// counter2();
+// counter2();
+// counter2();
+
+// 7.
+// function Counter() {
+//   var count = 0;
+//   this.incrementCounter = function () {
+//     count++;
+//     console.log(count);
+//   };
+
+//   this.decrementCounter = function () {
+//     count--;
+//     console.log(count);
+//   };
+// }
+
+// console.log('Counter 1');
+// var counter1 = new Counter();
+// counter1.incrementCounter();
+// counter1.decrementCounter();
+// counter1.decrementCounter();
+// counter1.incrementCounter();
+// counter1.decrementCounter();
+// counter1.incrementCounter();
+// counter1.incrementCounter();
+
+// console.log('Counter 2');
+// var counter2 = new Counter();
+// counter2.incrementCounter();
+// counter2.decrementCounter();
+// counter2.incrementCounter();
+// counter2.incrementCounter();
+
+// 8.
+// function a() {
+//   var x = 10;
+//   return function b() {
+//     console.log(x);
+//   };
+// }
+
+// var y = a();
+// // ...
+
+// y();
+
+// 9.
+function a() {
+  var x = 10,
+    z = 20;
+  return function b() {
+    console.log(x);
+  };
+}
+
+var y = a();
+// ...
+
+y();
+
+/*
+Summary 1:
+1. An inner function can be directly called using two parenthesis ()().
+2. Even parameters can be passed this way (Remember that the function needs to be returned to do this)
+3. Closures can also be used for data hiding and encapsulation. So other code cannot access this value.
+4. Unused variables are automatically deleted in High Level Programming language by garbage collector. Closures allocate a lot of memory which cannot be deleted so this acts as a disadvantage. 
+5. Some browsers now have smart garbage collectors that automatically delete variables that are not used outside closures.
 
 */
